@@ -1,0 +1,120 @@
+.about-grid {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 980px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.about-card .card-inner {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 25, 41, 0.9),
+    rgba(30, 58, 95, 0.6)
+  );
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+.about-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #3a86ff;
+}
+.pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(58, 134, 255, 0.3);
+  color: #fff;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  background: rgba(58, 134, 255, 0.1);
+}
+
+.skills-col h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #8338ec;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.skill i {
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 680px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skill {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.skill-icon {
+  width: 36px;
+  height: 36px;
+  background: center/cover no-repeat;
+  margin-bottom: 6px;
+}
+
+.edu {
+  margin-top: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 41, 0.85),
+    rgba(30, 58, 95, 0.45)
+  );
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(58, 134, 255, 0.1);
+}
+.edu h4 {
+  color: #3a86ff;
+  margin-bottom: 12px;
+}
+.edu-item {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.edu-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.edu-item strong {
+  display: block;
+  color: #ffffff;
+}
+.edu-item span {
+  color: #dbe8f6;
+  font-size: 14px;
+}
