@@ -3,8 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 60;
-  backdrop-filter: blur(6px);
+  
   background: rgba(10, 25, 41, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
@@ -114,3 +113,4 @@
     display: block;
   }
 }
+
