@@ -2,7 +2,10 @@ const errorHandler = (error, req, res, next) => {
   const statusCode = error.statusCode || 500;
 
   if (process.env.NODE_ENV !== 'test') {
-    console.error(error);
+    console.error('Error:', error);
+    if (error.cause) {
+      console.error('Error Cause:', error.cause);
+    }
   }
 
   res.status(statusCode).json({
