@@ -6,7 +6,7 @@ const rateLimit = require('express-rate-limit');
 const apiRoutes = require('./routes');
 const notFound = require('./middlewares/notFound');
 const errorHandler = require('./middlewares/errorHandler');
-const { clientUrl } = require('./config/env');
+const { clientUrls } = require('./config/env');
 
 const app = express();
 
@@ -20,7 +20,17 @@ const limiter = rateLimit({
 });
 
 app.use(helmet());
-app.use(cors({ origin: clientUrl }));
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin) return callback(null, true);
+      if (clientUrls.includes(origin)) return callback(null, true);
+      return callback(new Error(`CORS blocked for origin: ${origin}`));
+    },
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  })
+);
 app.use(express.json({ limit: '1mb' }));
 app.use(morgan('dev'));
 app.use('/api', limiter, apiRoutes);

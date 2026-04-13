@@ -10,6 +10,9 @@ const createTransporter = () => {
     host: smtpHost,
     port: smtpPort,
     secure: smtpSecure,
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
     auth: {
       user: smtpUser.trim(),
       pass: smtpPass.replace(/\s+/g, '')

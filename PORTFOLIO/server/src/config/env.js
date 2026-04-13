@@ -1,8 +1,13 @@
 require('dotenv').config();
 
+const clientUrls = String(process.env.CLIENT_URL || 'http://localhost:5173')
+  .split(',')
+  .map((url) => url.trim())
+  .filter(Boolean);
+
 module.exports = {
   port: process.env.PORT || 5000,
-  clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
+  clientUrls,
   nodeEnv: process.env.NODE_ENV || 'development',
   smtpHost: process.env.SMTP_HOST || '',
   smtpPort: Number(process.env.SMTP_PORT || 587),

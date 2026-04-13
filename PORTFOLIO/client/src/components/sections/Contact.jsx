@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaGithub, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import SectionWrapper from '../common/SectionWrapper';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
-import { submitContactForm } from '../../services/api';
+import { submitContactForm, warmUpServer } from '../../services/api';
 import { PERSONAL_INFO } from '../../data/content';
 import styles from './Contact.module.css';
 
@@ -27,6 +27,10 @@ function Contact({ summary = '' }) {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  useEffect(() => {
+    warmUpServer();
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -36,7 +40,13 @@ function Contact({ summary = '' }) {
       toast.success('Message sent successfully. I will get back to you soon.');
       setForm(initialForm);
     } catch (error) {
-      toast.error(error?.response?.data?.message || 'Unable to send right now. Please try again.');
+      const isTimeout = error?.code === 'ECONNABORTED';
+      const isCanceled = error?.code === 'ERR_CANCELED' || String(error?.message || '').toLowerCase().includes('canceled');
+      const fallback = isTimeout || isCanceled
+        ? 'Server is taking too long to respond. Please retry in a few seconds.'
+        : 'Unable to send right now. Please try again.';
+
+      toast.error(error?.response?.data?.message || fallback);
     } finally {
       setIsSubmitting(false);
     }
