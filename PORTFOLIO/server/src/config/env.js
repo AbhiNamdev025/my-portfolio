@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const clientUrls = String(process.env.CLIENT_URL || 'http://localhost:5173,https://my-portfolio-tan-chi-bycy0byn40.vercel.app')
+const clientUrls = String(process.env.CLIENT_URL || 'http://localhost:5173')
   .split(',')
   .map((url) => url.trim())
   .filter(Boolean);

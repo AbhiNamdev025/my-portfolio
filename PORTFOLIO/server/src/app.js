@@ -27,10 +27,6 @@ app.use(
       if (clientUrls.includes(origin)) {
         return callback(null, true);
       }
-      // Allow specific vercel domain directly as fallback to be 100% sure
-      if (origin === 'https://my-portfolio-tan-chi-bycy0byn40.vercel.app' || origin === 'http://localhost:5173') {
-         return callback(null, true);
-      }
       return callback(new Error(`CORS blocked for origin: ${origin}`));
     },
     credentials: true,
