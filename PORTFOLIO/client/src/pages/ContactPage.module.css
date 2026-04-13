@@ -1,0 +1,18 @@
+.summaryWrap {
+  width: min(1100px, 92%);
+  margin: 1rem auto 0;
+}
+
+.summaryCard {
+  padding: 0.2rem 0 0.2rem 0.95rem;
+  border-left: 3px solid var(--brand);
+}
+
+.summaryCard h2 {
+  font-family: 'Sora', sans-serif;
+  margin-bottom: 0.4rem;
+}
+
+.summaryCard p {
+  color: var(--text-secondary);
+}

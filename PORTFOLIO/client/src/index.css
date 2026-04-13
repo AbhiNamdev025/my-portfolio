@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700&display=swap');
+
+:root {
+  --bg-base: #0b1220;
+  --bg-surface: rgba(15, 23, 42, 0.72);
+  --bg-elevated: rgba(15, 23, 42, 0.9);
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --brand: #60a5fa;
+  --brand-strong: #3b82f6;
+  --highlight: #22d3ee;
+  --card-bg: rgba(15, 23, 42, 0.56);
+  --card-border: rgba(148, 163, 184, 0.24);
+  --shadow: 0 16px 36px rgba(2, 6, 23, 0.55);
+}
+
+[data-theme='light'] {
+  --bg-base: #f3f6fd;
+  --bg-surface: rgba(255, 255, 255, 0.76);
+  --bg-elevated: rgba(255, 255, 255, 0.9);
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --brand: #2563eb;
+  --brand-strong: #1e40af;
+  --highlight: #0891b2;
+  --card-bg: rgba(255, 255, 255, 0.64);
+  --card-border: rgba(148, 163, 184, 0.28);
+  --shadow: 0 14px 32px rgba(15, 23, 42, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+button {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(circle at 15% 18%, color-mix(in srgb, var(--brand) 13%, transparent), transparent 42%),
+    radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--highlight) 14%, transparent), transparent 38%),
+    var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

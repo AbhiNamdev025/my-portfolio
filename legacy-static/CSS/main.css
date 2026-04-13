@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #0a1929 0%, #1e3a5f 100%);
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* //footer */
+.footer {
+  padding: 24px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  color: #dbe8f6;
+}
+
+/*Animation*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.6s ease-out;
+}
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

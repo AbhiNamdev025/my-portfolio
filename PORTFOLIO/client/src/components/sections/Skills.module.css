@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  border-radius: 0.9rem;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.card svg {
+  color: var(--brand);
+}
+
+.name {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.group {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.loadMoreWrap {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 999px;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

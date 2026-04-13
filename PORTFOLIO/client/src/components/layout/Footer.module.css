@@ -1,0 +1,2 @@
+.footer { padding: 2.2rem 0; border-top: 1px solid var(--card-border); margin-top: 3rem; }
+.container { width: min(1100px, 92%); margin-inline: auto; text-align: center; color: var(--text-secondary); }

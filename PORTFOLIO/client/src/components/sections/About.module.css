@@ -1,0 +1,162 @@
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.journey {
+  grid-column: 1 / -1;
+  border-left: 4px solid var(--brand);
+  padding: 0.3rem 0 0.3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.journey h3 {
+  font-family: 'Sora', sans-serif;
+}
+
+.journey p {
+  color: var(--text-secondary);
+  max-width: 980px;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card h3 {
+  font-family: 'Sora', sans-serif;
+}
+
+.card p,
+.card li span {
+  color: var(--text-secondary);
+}
+
+.card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-left: 2px solid var(--brand);
+  padding-left: 0.7rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  border: 1px solid var(--card-border);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  color: var(--brand-strong);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.highlights {}
+.work {}
+.education {}
+.resume {}
+
+.resumeActions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.resumeLayout {
+  margin-top: 0.35rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(280px, 1fr);
+  gap: 1.15rem;
+  align-items: start;
+}
+
+.resumeViewer {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  height: clamp(280px, 56vh, 420px);
+}
+
+.resumeViewer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.resumePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.resumePanel h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+}
+
+.resumeMeta {
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+.resumeList {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+}
+
+.resumeList li {
+  color: var(--text-secondary);
+  border-left: 2px solid var(--brand);
+  padding-left: 0.6rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .education {
+    grid-column: 1 / -1;
+  }
+
+  .resume {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .resumeLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .resumeViewer {
+    height: 300px;
+  }
+}

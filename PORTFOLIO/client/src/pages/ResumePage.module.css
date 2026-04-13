@@ -1,0 +1,29 @@
+.wrap {
+  width: min(1100px, 92%);
+  margin: 6.2rem auto 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.3rem;
+}
+
+.card h1 {
+  font-family: 'Sora', sans-serif;
+  margin-bottom: 0.35rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+}
+
+.actions {
+  margin-top: 0.85rem;
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,42 @@
+.button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.72rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: linear-gradient(130deg, var(--brand), var(--highlight));
+  color: #fff;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brand) 28%, transparent);
+}
+
+.secondary {
+  background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
+  color: var(--brand);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.ghost {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.fullWidth {
+  width: 100%;
+}

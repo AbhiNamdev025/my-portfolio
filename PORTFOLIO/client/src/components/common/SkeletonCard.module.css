@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  backdrop-filter: blur(12px);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  animation: shimmer 1.35s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.lineLg,
+.lineMd,
+.lineSm {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-secondary) 18%, transparent);
+  height: 12px;
+}
+
+.lineLg { width: 70%; }
+.lineMd { width: 95%; }
+.lineSm { width: 45%; }

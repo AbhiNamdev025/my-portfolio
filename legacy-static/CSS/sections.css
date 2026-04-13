@@ -1,0 +1,18 @@
+.section {
+  padding: 80px 0;
+  position: relative;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.section-header h2 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 800;
+}
+.section-header p {
+  margin: 8px 0 0 0;
+  color: #dbe8f6;
+  font-size: 18px;
+}

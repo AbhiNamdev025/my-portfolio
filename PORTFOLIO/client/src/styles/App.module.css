@@ -1,0 +1,66 @@
+.appShell {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 72px;
+  flex: 1;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orbOne,
+.orbTwo,
+.orbThree {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(32px);
+  opacity: 0.45;
+}
+
+.orbOne {
+  width: 320px;
+  height: 320px;
+  background: color-mix(in srgb, var(--brand) 40%, transparent);
+  left: -80px;
+  top: 12%;
+}
+
+.orbTwo {
+  width: 260px;
+  height: 260px;
+  background: color-mix(in srgb, var(--highlight) 30%, transparent);
+  right: -70px;
+  top: 8%;
+}
+
+.orbThree {
+  width: 280px;
+  height: 280px;
+  background: color-mix(in srgb, var(--brand-strong) 28%, transparent);
+  right: 18%;
+  bottom: -120px;
+}
+
+.fallbackGrid {
+  max-width: 1100px;
+  margin: 8rem auto 2rem;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}

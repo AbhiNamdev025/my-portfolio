@@ -1,0 +1,18 @@
+.field { display: flex; flex-direction: column; gap: 0.45rem; }
+.field span { font-weight: 700; font-size: 0.9rem; }
+.input {
+  width: 100%;
+  border: 1px solid var(--card-border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  font: inherit;
+}
+textarea.input { resize: vertical; min-height: 130px; }
+.input:focus {
+  outline: 0;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 25%, transparent);
+}
+.error { color: #ef4444; font-size: 0.78rem; }
