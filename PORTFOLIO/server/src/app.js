@@ -22,13 +22,20 @@ const limiter = rateLimit({
 app.use(helmet());
 app.use(
   cors({
-    origin(origin, callback) {
+    origin: function (origin, callback) {
       if (!origin) return callback(null, true);
-      if (clientUrls.includes(origin)) return callback(null, true);
+      if (clientUrls.includes(origin)) {
+        return callback(null, true);
+      }
+      // Allow specific vercel domain directly as fallback to be 100% sure
+      if (origin === 'https://my-portfolio-tan-chi-bycy0byn40.vercel.app' || origin === 'http://localhost:5173') {
+         return callback(null, true);
+      }
       return callback(new Error(`CORS blocked for origin: ${origin}`));
     },
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept']
   })
 );
 app.use(express.json({ limit: '1mb' }));
