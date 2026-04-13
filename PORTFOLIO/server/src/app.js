@@ -23,11 +23,8 @@ app.use(helmet());
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
-      if (clientUrls.includes(origin)) {
-        return callback(null, true);
-      }
-      return callback(new Error(`CORS blocked for origin: ${origin}`));
+      // Allow all origins dynamically to prevent CORS blocks
+      return callback(null, origin || '*');
     },
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
