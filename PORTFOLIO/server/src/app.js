@@ -10,6 +10,8 @@ const { clientUrls } = require('./config/env');
 
 const app = express();
 
+app.set('trust proxy', 1); // Tell express it sits behind a proxy (like Render) to fix rate-limit IP logging
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 200,
