@@ -8,8 +8,6 @@ export const SKILLS = [
   { name: 'Node.js', group: 'Backend' },
   { name: 'Express.js', group: 'Backend' },
   { name: 'REST APIs', group: 'Backend' },
-  { name: 'JWT Auth', group: 'Backend' },
-  { name: 'Socket.io', group: 'Backend' },
 
   { name: 'MongoDB', group: 'Database' },
   { name: 'Mongoose', group: 'Database' },
@@ -18,8 +16,12 @@ export const SKILLS = [
   { name: 'Expo', group: 'Mobile' },
 
   { name: 'Figma', group: 'Design' },
+  { name: 'Canva', group: 'Design' },
+  { name: 'CapCut', group: 'Design' },
   { name: 'UI/UX Design', group: 'Design' },
   { name: 'Wireframing', group: 'Design' },
+  { name: 'Social Media Managing', group: 'Marketing' },
+  { name: 'Meta Ads', group: 'Marketing' },
 
   { name: 'Git', group: 'DevOps' },
   { name: 'GitHub', group: 'DevOps' },
