@@ -1,15 +1,20 @@
-import { motion as Motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
-import Button from './Button';
-import { cardReveal } from '../../utils/motion';
-import styles from './ProjectCard.module.css';
+import { motion as Motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Button from "./Button";
+import { cardReveal } from "../../utils/motion";
+import styles from "./ProjectCard.module.css";
 
 function ProjectCard({ project }) {
   const safeProject = {
-    title: project?.title || 'Untitled Project',
-    description: project?.description || 'Project description not available yet.',
-    techStack: Array.isArray(project?.techStack) && project.techStack.length ? project.techStack : ['MERN'],
-    liveLink: project?.liveLink || ''
+    title: project?.title || "Untitled Project",
+    description:
+      project?.description || "Project description not available yet.",
+    techStack:
+      Array.isArray(project?.techStack) && project.techStack.length
+        ? project.techStack
+        : ["MERN"],
+    liveLink: project?.liveLink || "",
+    framework: project?.framework || "",
   };
 
   return (
@@ -31,9 +36,18 @@ function ProjectCard({ project }) {
       </div>
       <div className={styles.actions}>
         {safeProject.liveLink && (
-          <Button as="a" href={safeProject.liveLink} target="_blank" rel="noreferrer" variant="secondary">
+          <Button
+            as="a"
+            href={safeProject.liveLink}
+            target="_blank"
+            rel="noreferrer"
+            variant="secondary"
+          >
             Open Project <ArrowUpRight size={16} />
           </Button>
+        )}
+        {safeProject.framework && (
+          <span className={styles.framework}>{safeProject.framework}</span>
         )}
       </div>
     </Motion.article>
@@ -41,5 +55,3 @@ function ProjectCard({ project }) {
 }
 
 export default ProjectCard;
-
-

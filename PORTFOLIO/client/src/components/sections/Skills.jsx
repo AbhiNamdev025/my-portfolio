@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Bot, Braces, Clapperboard, Cloud, Code2, Database, GitBranch, Megaphone, MessageSquare, Palette, PenTool, Server, Smartphone, Workflow } from 'lucide-react';
+import { Bot, Braces, Clapperboard, Cloud, Code2, Database, GitBranch, Megaphone, MessageSquare, Palette, PenTool, Server, Smartphone, Video, Workflow } from 'lucide-react';
 import SectionWrapper from '../common/SectionWrapper';
 import Button from '../common/Button';
 import { SKILLS } from '../../data/content';
@@ -24,9 +24,14 @@ const iconByName = {
   Figma: PenTool,
   Canva: Palette,
   CapCut: Clapperboard,
+  'Video Editing': Clapperboard,
+  'Video Recording': Video,
   'UI/UX Design': Palette,
   Wireframing: PenTool,
-  'Social Media Managing': Megaphone,
+  'Social Media Management': Megaphone,
+  'Digital Marketing': Megaphone,
+  'Content Marketing': Megaphone,
+  'Meta Ads': Megaphone,
   Git: GitBranch,
   GitHub: GitBranch,
   Vercel: Cloud,
@@ -41,6 +46,7 @@ const iconByGroup = {
   Database: Database,
   Mobile: Smartphone,
   Design: Palette,
+  Creative: Clapperboard,
   Marketing: Megaphone,
   DevOps: Cloud,
   'AI Tools': Bot

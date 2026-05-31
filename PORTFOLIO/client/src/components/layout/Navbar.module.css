@@ -77,6 +77,10 @@
   padding-inline: 0.9rem;
 }
 
+.hireBtnMobile {
+  display: none;
+}
+
 .mobileBtn {
   display: none;
   border: 1px solid var(--card-border);
@@ -138,6 +142,25 @@
   .links a:hover,
   .links a.active {
     background: color-mix(in srgb, var(--brand) 14%, transparent);
+  }
+
+  .hireBtnMobile {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.62rem 0.75rem;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    display: block;
+  }
+
+  .hireBtnMobile:hover {
+    background: color-mix(in srgb, var(--brand) 14%, transparent);
+    color: var(--brand);
   }
 
   .show {

@@ -66,6 +66,14 @@ function Navbar() {
               {link.name}
             </NavLink>
           ))}
+          <Button
+            as={NavLink}
+            to="/contact"
+            className={styles.hireBtnMobile}
+            onClick={() => setOpen(false)}
+          >
+            Hire Me
+          </Button>
         </div>
 
         <div className={styles.actions}>

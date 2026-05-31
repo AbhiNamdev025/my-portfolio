@@ -2,7 +2,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  align-items: start;
+  align-items: stretch;
 }
 
 .info,
@@ -19,8 +19,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  justify-content: flex-start;
-  height: auto;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .infoTop {
@@ -30,7 +30,7 @@
 }
 
 .info h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 1.15rem;
 }
 
@@ -60,11 +60,47 @@
   color: var(--brand);
 }
 
+.quickInfo {
+  border-top: 1px solid var(--card-border);
+  padding-top: 0.95rem;
+}
+
+.quickInfo span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.quickTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quickTags strong {
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  color: var(--brand-strong);
+  font-size: 0.8rem;
+  padding: 0.38rem 0.7rem;
+}
+
+.andMore {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.45rem;
+  margin-top: auto;
 }
 
 .links a {
@@ -78,7 +114,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 150ms ease, border-color 150ms ease;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease;
 }
 
 .links a:hover {

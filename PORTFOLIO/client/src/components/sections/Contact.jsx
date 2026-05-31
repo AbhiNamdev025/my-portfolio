@@ -1,25 +1,30 @@
-import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
-import { Mail, MapPin, Phone } from 'lucide-react';
-import { FaGithub, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
-import SectionWrapper from '../common/SectionWrapper';
-import InputField from '../common/InputField';
-import Button from '../common/Button';
-import { submitContactForm, warmUpServer } from '../../services/api';
-import { PERSONAL_INFO } from '../../data/content';
-import styles from './Contact.module.css';
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { Mail, MapPin, Phone } from "lucide-react";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
+import SectionWrapper from "../common/SectionWrapper";
+import InputField from "../common/InputField";
+import Button from "../common/Button";
+import { submitContactForm, warmUpServer } from "../../services/api";
+import { PERSONAL_INFO } from "../../data/content";
+import styles from "./Contact.module.css";
 
-const initialForm = { name: '', email: '', message: '' };
+const initialForm = { name: "", email: "", message: "" };
 
-function Contact({ summary = '' }) {
+function Contact({ summary = "" }) {
   const [form, setForm] = useState(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const safeInfo = {
-    phone: PERSONAL_INFO?.phone || '+91 0000000000',
-    email: PERSONAL_INFO?.email || 'your.email@example.com',
-    location: PERSONAL_INFO?.location || 'India',
-    socialLinks: PERSONAL_INFO?.socialLinks || {}
+    phone: PERSONAL_INFO?.phone || "+91 0000000000",
+    email: PERSONAL_INFO?.email || "your.email@example.com",
+    location: PERSONAL_INFO?.location || "India",
+    socialLinks: PERSONAL_INFO?.socialLinks || {},
   };
 
   const updateField = (event) => {
@@ -37,14 +42,19 @@ function Contact({ summary = '' }) {
     setIsSubmitting(true);
     try {
       await submitContactForm(form);
-      toast.success('Message sent successfully. I will get back to you soon.');
+      toast.success("Message sent successfully. I will get back to you soon.");
       setForm(initialForm);
     } catch (error) {
-      const isTimeout = error?.code === 'ECONNABORTED';
-      const isCanceled = error?.code === 'ERR_CANCELED' || String(error?.message || '').toLowerCase().includes('canceled');
-      const fallback = isTimeout || isCanceled
-        ? 'Server is taking too long to respond. Please retry in a few seconds.'
-        : 'Unable to send right now. Please try again.';
+      const isTimeout = error?.code === "ECONNABORTED";
+      const isCanceled =
+        error?.code === "ERR_CANCELED" ||
+        String(error?.message || "")
+          .toLowerCase()
+          .includes("canceled");
+      const fallback =
+        isTimeout || isCanceled
+          ? "Server is taking too long to respond. Please retry in a few seconds."
+          : "Unable to send right now. Please try again.";
 
       toast.error(error?.response?.data?.message || fallback);
     } finally {
@@ -64,7 +74,9 @@ function Contact({ summary = '' }) {
           <div className={styles.infoTop}>
             <div>
               <h3>Contact Details</h3>
-              <p className={styles.note}>Choose your preferred way to connect. I usually respond quickly.</p>
+              <p className={styles.note}>
+                Choose your preferred way to connect. I usually respond quickly.
+              </p>
             </div>
 
             <div className={styles.detailList}>
@@ -78,26 +90,61 @@ function Contact({ summary = '' }) {
                 <MapPin size={22} /> {safeInfo.location}
               </p>
             </div>
+
+            <div className={styles.quickInfo}>
+              <span>Available For</span>
+              <div className={styles.quickTags}>
+                <strong>Web Apps</strong>
+                <strong>Mobile Apps</strong>
+                <strong>Admin Panels</strong>
+                <strong>Marketing Support</strong>
+              </div>
+              <p className={styles.andMore}>and many more...</p>
+            </div>
           </div>
 
           <div className={styles.links}>
             {safeInfo.socialLinks.github && (
-              <a href={safeInfo.socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+              <a
+                href={safeInfo.socialLinks.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                title="GitHub"
+              >
                 <FaGithub size={18} />
               </a>
             )}
             {safeInfo.socialLinks.linkedin && (
-              <a href={safeInfo.socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <a
+                href={safeInfo.socialLinks.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
                 <FaLinkedinIn size={18} />
               </a>
             )}
             {safeInfo.socialLinks.twitter && (
-              <a href={safeInfo.socialLinks.twitter} target="_blank" rel="noreferrer" aria-label="X" title="X">
+              <a
+                href={safeInfo.socialLinks.twitter}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X"
+                title="X"
+              >
                 <FaXTwitter size={18} />
               </a>
             )}
             {safeInfo.socialLinks.instagram && (
-              <a href={safeInfo.socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
+              <a
+                href={safeInfo.socialLinks.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
                 <FaInstagram size={18} />
               </a>
             )}
@@ -133,7 +180,7 @@ function Contact({ summary = '' }) {
             placeholder="Write your project details"
           />
           <Button fullWidth type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : 'Send Message'}
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </div>
