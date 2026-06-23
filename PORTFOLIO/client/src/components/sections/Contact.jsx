@@ -97,7 +97,7 @@ function Contact({ summary = "" }) {
                 <strong>Web Apps</strong>
                 <strong>Mobile Apps</strong>
                 <strong>Admin Panels</strong>
-                <strong>Marketing Support</strong>
+                {/* <strong>Marketing Support</strong> */}
               </div>
               <p className={styles.andMore}>and many more...</p>
             </div>
