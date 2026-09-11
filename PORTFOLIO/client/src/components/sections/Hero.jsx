@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion as Motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowDown } from 'lucide-react';
-import { FaGithub, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import Button from '../common/Button';
 import { PERSONAL_INFO } from '../../data/content';
 import styles from './Hero.module.css';
@@ -45,7 +45,6 @@ function Hero() {
     socialLinks: {
       github: PERSONAL_INFO?.socialLinks?.github || '#',
       linkedin: PERSONAL_INFO?.socialLinks?.linkedin || '#',
-      twitter: PERSONAL_INFO?.socialLinks?.twitter || '#',
       instagram: PERSONAL_INFO?.socialLinks?.instagram || '#'
     }
   };
@@ -111,7 +110,6 @@ function Hero() {
             <Motion.div className={styles.socials} variants={heroReveal}>
               <Motion.a whileHover={{ y: -2, scale: 1.03 }} whileTap={{ scale: 0.97 }} href={safeInfo.socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub size={18} /></Motion.a>
               <Motion.a whileHover={{ y: -2, scale: 1.03 }} whileTap={{ scale: 0.97 }} href={safeInfo.socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn size={18} /></Motion.a>
-              <Motion.a whileHover={{ y: -2, scale: 1.03 }} whileTap={{ scale: 0.97 }} href={safeInfo.socialLinks.twitter} target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter size={18} /></Motion.a>
               <Motion.a whileHover={{ y: -2, scale: 1.03 }} whileTap={{ scale: 0.97 }} href={safeInfo.socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram size={18} /></Motion.a>
             </Motion.div>
           </Motion.div>

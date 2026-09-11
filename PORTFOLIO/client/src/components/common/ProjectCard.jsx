@@ -17,6 +17,10 @@ function ProjectCard({ project }) {
     framework: project?.framework || "",
   };
 
+  const specialTags = ["Training Project", "Internship Project"];
+  const displayTags = safeProject.techStack.filter(tag => !specialTags.includes(tag));
+  const highlightedTags = safeProject.techStack.filter(tag => specialTags.includes(tag));
+
   return (
     <Motion.article
       className={styles.card}
@@ -27,10 +31,17 @@ function ProjectCard({ project }) {
       whileTap={{ scale: 0.995 }}
       transition={{ duration: 0.18 }}
     >
+      {highlightedTags.length > 0 && (
+        <div className={styles.highlightedTags}>
+          {highlightedTags.map(tag => (
+            <span key={tag} className={styles.highlightedTag}>{tag}</span>
+          ))}
+        </div>
+      )}
       <h3>{safeProject.title}</h3>
       <p>{safeProject.description}</p>
       <div className={styles.tags}>
-        {safeProject.techStack.map((tech) => (
+        {displayTags.map((tech) => (
           <span key={tech}>{tech}</span>
         ))}
       </div>

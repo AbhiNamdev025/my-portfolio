@@ -3,15 +3,21 @@ import { ThemeContext } from "./themeContext";
 
 const isValidTheme = (value) => value === "light" || value === "dark";
 
-const getInitialTheme = () => "light";
+const getInitialTheme = () => {
+  if (typeof window !== 'undefined') {
+    const saved = localStorage.getItem("portfolio-theme-v2");
+    if (saved === "light" || saved === "dark") return saved;
+  }
+  return "dark";
+};
 
 function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
-    const safeTheme = isValidTheme(theme) ? theme : "light";
+    const safeTheme = isValidTheme(theme) ? theme : "dark";
     document.documentElement.setAttribute("data-theme", safeTheme);
-    localStorage.setItem("portfolio-theme", safeTheme);
+    localStorage.setItem("portfolio-theme-v2", safeTheme);
   }, [theme]);
 
   const value = useMemo(

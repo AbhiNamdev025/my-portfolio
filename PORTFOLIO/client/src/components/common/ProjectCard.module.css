@@ -37,11 +37,32 @@
 .card h3 {
   font-size: 1.15rem;
   font-family: "Sora", sans-serif;
+  padding-right: 6.5rem; /* Prevent overlap with the badge */
 }
 
 .card p {
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+.highlightedTags {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.highlightedTag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--brand);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--brand) 40%, transparent);
+  letter-spacing: 0.3px;
 }
 
 .tags {

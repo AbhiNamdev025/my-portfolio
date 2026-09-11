@@ -14,6 +14,7 @@ export const SKILLS = [
 
   { name: 'React Native', group: 'Mobile' },
   { name: 'Expo', group: 'Mobile' },
+  { name: 'Flutter', group: 'Mobile' },
 
   { name: 'Figma', group: 'Design' },
   { name: 'Canva', group: 'Design' },

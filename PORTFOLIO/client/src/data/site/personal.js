@@ -14,7 +14,6 @@ export const PERSONAL_INFO = {
   socialLinks: {
     github: "https://github.com/AbhiNamdev025",
     linkedin: "https://www.linkedin.com/in/abhinamdev025",
-    twitter: "https://x.com/_nmdvabhi_",
     instagram:
       "https://www.instagram.com/namdevabhi_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
   },

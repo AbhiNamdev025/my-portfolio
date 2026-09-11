@@ -24,60 +24,76 @@ export const PROJECTS = [
     framework: "CodroidHub",
   },
   {
-    title: "VayaparVault",
+    title: "Karobaar",
     description:
-      "Full SaaS business suite bringing together InventoryVault, BillVault, GSTVault, AccountVault, PayrollVault, and POSVault for business operations.",
+      "Multi-vault business platform encompassing Account, Bill, Business, GST, HR, Inventory, Payroll, and POS.",
     techStack: ["SaaS", "MERN", "React", "Node.js", "MongoDB"],
-    liveLink: "https://vayaparvault.devarshinnovations.com/",
+    liveLink: "https://karobaar.devarshinnovations.com/",
+    framework: "CodroidHub",
+  },
+  {
+    title: "LeadMatrix",
+    description:
+      "AI-integrated lead management with marketing automation, campaigns, and CMS.",
+    techStack: ["MERN", "React", "Node.js", "MongoDB"],
+    liveLink: "https://karobaarsathi.devarshinnovations.com/",
+    framework: "CodroidHub",
+  },
+  {
+    title: "MilJaye",
+    description:
+      "Venue booking app featuring seamless reservations, operations, and property management.",
+    techStack: ["MERN", "React", "Node.js", "MongoDB"],
+    liveLink: "https://miljaye.devarshinnovations.com/",
     framework: "CodroidHub",
   },
   {
     title: "Pet Vault",
     description:
       "Pet care and management platform experience with modern UI and smooth workflow for pet-focused users.",
-    techStack: ["MERN", "React", "Node.js", "MongoDB"],
+    techStack: ["MERN", "React", "Node.js", "MongoDB", "Internship Project"],
     liveLink: "https://petvault.devarshinnovations.com/",
   },
   {
     title: "Rydixo",
     description:
       "Cab booking platform built for smooth ride discovery, booking flow, and responsive user interactions.",
-    techStack: ["MERN", "React", "Express", "MongoDB"],
+    techStack: ["MERN", "React", "Express", "MongoDB", "Internship Project"],
     liveLink: "https://rydixo.devarshinnovations.com/",
   },
   {
     title: "Pizzaiolo",
     description:
       "Independent cafe product management and booking app with listing, ordering, and schedule handling workflows.",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Internship Project"],
     liveLink: "https://pizza-app-livid-two.vercel.app/",
   },
   {
     title: "Pet Adoption Site",
     description:
       "Pet adoption listing UI with filtering and contact flow crafted as an interactive frontend demo.",
-    techStack: ["HTML", "CSS", "JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript", "Training Project"],
     liveLink: "https://assignments-rosy-nine.vercel.app/",
   },
   {
     title: "Dino JS Game",
     description:
       "Classic endless runner built with vanilla JavaScript and keyboard controls.",
-    techStack: ["JavaScript", "HTML", "CSS"],
+    techStack: ["JavaScript", "HTML", "CSS", "Training Project"],
     liveLink: "https://dinogame-phi.vercel.app/",
   },
   {
     title: "Calculator",
     description:
       "Minimal calculator with responsive layout and smooth input interactions.",
-    techStack: ["JavaScript", "HTML", "CSS"],
+    techStack: ["JavaScript", "HTML", "CSS", "Training Project"],
     liveLink: "https://git-blush-kappa.vercel.app/",
   },
   {
     title: "Nike Site Replication",
     description:
       "Frontend UI/UX replication project inspired by Nike e-commerce interactions.",
-    techStack: ["HTML", "CSS"],
+    techStack: ["HTML", "CSS", "Training Project"],
     liveLink: "https://assignments-2uqd.vercel.app/",
   },
 ];

@@ -5,7 +5,6 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
-  FaXTwitter,
 } from "react-icons/fa6";
 import SectionWrapper from "../common/SectionWrapper";
 import InputField from "../common/InputField";
@@ -126,17 +125,7 @@ function Contact({ summary = "" }) {
                 <FaLinkedinIn size={18} />
               </a>
             )}
-            {safeInfo.socialLinks.twitter && (
-              <a
-                href={safeInfo.socialLinks.twitter}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="X"
-                title="X"
-              >
-                <FaXTwitter size={18} />
-              </a>
-            )}
+
             {safeInfo.socialLinks.instagram && (
               <a
                 href={safeInfo.socialLinks.instagram}
