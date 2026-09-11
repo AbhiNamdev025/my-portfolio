@@ -4,7 +4,7 @@ export const PROJECTS = [
     description:
       "Full event management system covering event planning, bookings, operations, and organized admin workflows.",
     techStack: ["MERN", "React", "Node.js", "MongoDB"],
-    liveLink: "https://puems.devarshinnovations.com/",
+    liveLink: "",
     framework: "CodroidHub",
   },
   {
@@ -12,7 +12,7 @@ export const PROJECTS = [
     description:
       "Corporate management and attendance platform including HR, payroll, salary slips, RBAC, leaves, reports, assets, help desk, POSH, performance KPI, reimbursement, and finance modules.",
     techStack: ["MERN", "React", "Node.js", "MongoDB"],
-    liveLink: "https://clockin.devarshinnovations.com/admin/dashboard",
+    liveLink: "https://clockin.devarshinnovations.com/about",
     framework: "CodroidHub",
   },
   {
